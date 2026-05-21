@@ -17,6 +17,7 @@ namespace Vmaya.VNet
             NetworkServer.RegisterHandler<SubscriptionMessage>(OnSubscriptionReceived);
         }
 
+        // При запросе клиента на подписку
         protected void OnSubscriptionReceived(NetworkConnectionToClient conn, SubscriptionMessage msg)
         {
             int index_cl = GetClientId(conn);
@@ -32,6 +33,8 @@ namespace Vmaya.VNet
                     if (msg.Subscribe)
                     {
                         _clientSubscriptions[index_cl].Add(msg.MessageType);
+
+                        // Если подписка на сообщения типа HelloMessage то сразу отправляем соответствующее сообщение клиенту
                         if (msg.MessageType == "HelloMessage")
                         {
                             SendToClient(index_cl, new HelloMessage()

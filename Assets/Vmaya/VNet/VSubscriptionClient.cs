@@ -13,7 +13,10 @@ namespace Vmaya.VNet
         public void AfterConnect()
         {
             Subscribe(true, (HelloMessage msg) => {
-                _uiManager.AddLog(msg.ToString() + ": " + msg.Text);
+                string logMsg = "Получено сообщение от сервера: " + msg.Text;
+                if (_uiManager)
+                    _uiManager.AddLog(logMsg);
+                else Debug.Log(logMsg);
             });
         }
 
