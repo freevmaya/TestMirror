@@ -3,6 +3,7 @@
 Реализация тех-задания: https://hh.ru/away?to=https%3A%2F%2Fdisk.yandex.ru%2Fd%2F9dOXET3dfl6sAg&chatId=5329990528&messageId=14161508535&hhtmFrom=chat
  на Unity: 2022.3.62f3; 
 Использовались плагины: Mirror 96.0.1, Zenject, TextMesh Pro
+
 Приложение может выступать как в роли сервера так и в роли сервера, в UI приложения есть соответствующие кнопки:
 
 Client - подключится в режиме клиента
